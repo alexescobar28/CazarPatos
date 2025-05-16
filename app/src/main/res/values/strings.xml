@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CazarPatos</string>
+    <string name="ButtonLogin">"Login "</string>
+    <string name="greetingsButton" />
+    <string name="grettingsButton">"Hello "</string>
+    <string name="TextGreeting">Hello World\n</string>
 </resources>
