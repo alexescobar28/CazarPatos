@@ -68,10 +68,15 @@ class LoginActivity : AppCompatActivity() {
         else{
             listadoAGrabar ="" to ""
         }
+        manejadorArchivo=SharedPreferencesManager(this)
         manejadorArchivo.SaveInformation(listadoAGrabar)
+        manejadorArchivo=EncriptedSharedPreferencesManager(this)
+        manejadorArchivo.SaveInformation("epn.fis" to "1234")
     }
 
     private fun LeerDatosDePreferencias(){
+        manejadorArchivo=SharedPreferencesManager(this)
+
         val listadoLeido = manejadorArchivo.ReadInformation()
         if(listadoLeido.first != null){
             checkBoxRecordarme.isChecked = true
