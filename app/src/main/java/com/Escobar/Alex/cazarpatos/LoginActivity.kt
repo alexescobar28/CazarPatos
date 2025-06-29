@@ -3,6 +3,7 @@ package com.Escobar.Alex.cazarpatos
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -71,18 +72,40 @@ class LoginActivity : AppCompatActivity() {
         manejadorArchivo=SharedPreferencesManager(this)
         manejadorArchivo.SaveInformation(listadoAGrabar)
         manejadorArchivo=EncriptedSharedPreferencesManager(this)
-        manejadorArchivo.SaveInformation("epn.fis" to "1234")
+        manejadorArchivo.SaveInformation("alex.escobar" to "1234")
+
+        //guardar datos en archivo
+        manejadorArchivo= SharedPreferencesManager(this)
+        manejadorArchivo.SaveInformation("alex.escobar" to "1234")
+        manejadorArchivo= EncriptedSharedPreferencesManager(this)
+        manejadorArchivo.SaveInformation("alex.escobar" to "1234")
+        manejadorArchivo= FileInternalManager(this)
+        manejadorArchivo.SaveInformation("alex.escobar" to "12345")
+
     }
 
     private fun LeerDatosDePreferencias(){
+        var listadoLeido : Pair<String,String>
         manejadorArchivo=SharedPreferencesManager(this)
 
-        val listadoLeido = manejadorArchivo.ReadInformation()
+        listadoLeido = manejadorArchivo.ReadInformation()
+        Log.d("TAG", "SharedPreferencesManager" + listadoLeido.toList().toString())
         if(listadoLeido.first != null){
             checkBoxRecordarme.isChecked = true
         }
         editTextEmail.setText ( listadoLeido.first )
         editTextPassword.setText ( listadoLeido.second )
+
+        //encrypted
+        manejadorArchivo= EncriptedSharedPreferencesManager(this)
+        listadoLeido= manejadorArchivo.ReadInformation()
+        Log.d("TAG", "EncriptedSharedPreferencesManager" + listadoLeido.toList().toString())
+
+        //internal
+        manejadorArchivo= FileInternalManager(this)
+        listadoLeido= manejadorArchivo.ReadInformation()
+        Log.d("TAG", "FileInternalManager" + listadoLeido.toList().toString())
+
     }
     private fun validateRequiredData():Boolean{
         val email = editTextEmail.text.toString()
