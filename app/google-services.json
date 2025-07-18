@@ -1,0 +1,29 @@
+ {
+  "project_info": {
+    "project_number": "897654177906",
+    "project_id": "proyectocazarpatos-7fe44",
+    "storage_bucket": "proyectocazarpatos-7fe44.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897654177906:android:7d97637c8121f425d302eb",
+        "android_client_info": {
+          "package_name": "com.Escobar.Alex.cazarpatos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKLZ-amlSF6RIxLWrbHInOeoXUjdFv5Wg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
